@@ -1,0 +1,25 @@
+{
+  "name": "portfolio3",
+  "version": "1.0.0",
+  "description": "> This portfolio application is a simple portfolio , with about, skills and some projects.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zahraaliaghazadeh/Portfolio3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuanyuan210/yoyo-portfolio/issues"
+  },
+  "homepage": "https://github.com/yuanyuan210/yoyo-portfolio#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.7.2"
+  }
+}
