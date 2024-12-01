@@ -5,7 +5,9 @@
     "build": "next build",
     "start": "next start",
     "check": "prettier --check .",
-    "lint": "prettier --write ."
+    "lint": "prettier --write .",
+    "export": "next build && next export",
+    "deploy": "npm run export && touch out/.nojekyll"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.0",
