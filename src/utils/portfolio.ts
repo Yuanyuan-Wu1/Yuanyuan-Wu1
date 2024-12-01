@@ -237,8 +237,8 @@ export const projectsSection: ProjectsSectionType = {
       name: "Dash Bot",
       url: "",
       repo: "",
-      videoUrl: "https://www.youtube.com/watch?v=cVOmJRHzG6k",
-      img: "/Dash-Bot.png",
+      img: "/Dash-Bot.png",  // 作为视频封面图
+      videoUrl: "https://www.youtube.com/embed/cVOmJRHzG6k",
       year: 2022,
       tags: ["Java",
         "Gradle",
