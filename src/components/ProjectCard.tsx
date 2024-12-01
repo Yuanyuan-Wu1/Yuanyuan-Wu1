@@ -5,15 +5,28 @@ import { useEffect, useState } from 'react';
 import { ProjectType } from '../types';
 import { blurImageURL } from '../utils/config';
 
+interface ProjectCardProps {
+  name: string;
+  url: string;
+  repo: string;
+  year: number;
+  img?: string;          // 可选的图片
+  video?: string;        // 可选的本地视频
+  videoUrl?: string;     // 可选的在线视频URL
+  tags: string[];
+}
+
 const ProjectCard = ({
   name,
   url,
   repo,
   year,
   img,
+  video,
+  videoUrl,
   tags,
   ...rest
-}: ProjectType & MotionProps) => {
+}: ProjectCardProps) => {
   // To avoid hydration failed error
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -31,16 +44,36 @@ const ProjectCard = ({
         }}
         className="group bg-bg-secondary block w-full shadow-xl dark:shadow-2xl rounded-md overflow-hidden transition-all duration-200"
       >
-        <div className="overflow-hidden h-[200px]">
-          <Image
-            src={img}
-            alt={name}
-            width={300}
-            height={300}
-            placeholder="blur"
-            blurDataURL={blurImageURL}
-            className="w-full h-full object-cover"
-          />
+        <div className="media-container">
+          {(video || videoUrl) ? (
+            video ? (
+              // 本地视频
+              <video 
+                controls 
+                className="w-full rounded-lg shadow-lg"
+                poster={img} // 使用图片作为视频封面
+              >
+                <source src={video} type="video/mp4" />
+              </video>
+            ) : (
+              // YouTube 或其他在线视频
+              <iframe
+                className="w-full aspect-video rounded-lg shadow-lg"
+                src={videoUrl}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )
+          ) : (
+            // 如果没有视频，显示图片
+            img && (
+              <img 
+                src={img} 
+                alt={name} 
+                className="w-full rounded-lg shadow-lg"
+              />
+            )
+          )}
         </div>
         <div className="p-4 py-3 space-y-1">
           <div className="flex justify-between items-center">

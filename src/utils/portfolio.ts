@@ -200,7 +200,7 @@ export const projectsSection: ProjectsSectionType = {
       name: "CI/CD Pipeline Visualization Tool",
       url: "https://pypi.org/project/t5_grp/", 
       repo: "https://github.com/CS6510-SEA-F24/t5-project.git",
-      img: "",  // 如果有项目截图
+      videoUrl: "https://www.youtube.com/watch?v=cVOmJRHzG6k",
       year: 2024,
       tags: [
         "Python",
@@ -236,9 +236,15 @@ export const projectsSection: ProjectsSectionType = {
       name: "Dash Bot",
       url: "",
       repo: "",
-      img: "",
+      videoUrl: "https://www.youtube.com/watch?v=cVOmJRHzG6k",
       year: 2022,
-      tags: ["Java", "Gradle", "MongoDB", "Docker", "MVC"],
+      tags: ["Java",
+        "Gradle",
+        "MongoDB",
+        "Docker",
+        "MVC",
+        "Discord API",
+        "fly.io"],
     },
     {
       id: getId(),

@@ -75,4 +75,5 @@ Thumbs.db
 # Logs
 logs
 *.log
-.cursorrules
+.cursorrules.DS_Store
+**/.DS_Store

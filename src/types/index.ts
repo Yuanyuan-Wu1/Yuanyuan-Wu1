@@ -24,15 +24,22 @@ export type ExperienceType = {
   tasks: string[];
 };
 
-export type ProjectType = {
+export interface ProjectType {
   id: string;
   name: string;
   url: string;
-  year: number;
-  img: string;
-  tags: string[];
   repo: string;
-};
+  img?: string;
+  video?: string;
+  videoUrl?: string;
+  year: number;
+  tags: string[];
+}
+
+export interface ProjectsSectionType {
+  title: string;
+  projects: ProjectType[];
+}
 
 export type StringKeyValueType = {
   [link: string]: string;
