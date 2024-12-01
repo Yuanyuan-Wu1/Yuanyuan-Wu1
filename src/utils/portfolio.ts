@@ -171,10 +171,7 @@ export const experienceSection: ExperienceSectionType = {
       started: 'June 2023',
       upto: 'Aug 2023',
       tasks: [
-        "Built 15+ dynamic web applications using React and Next.js, resulting in a 15% increase in user engagement.                      Collaborated closely 'with' the design team to implement pixel-perfect UI/UX designs, consistently delivering projects           on-time.",
-        "Developed and maintained responsive web applications for clients in the food and hospitality industry, enhancing their           online presence and customer engagement. Implemented Tailwind CSS to streamline the development process, reducing CSS            codebase by 20%",
-        "Collaborated with clients to gather project requirements and translate them into actionable technical tasks, ensuring            client expectations were met or exceeded.",
-      ],
+        ],
     },
     
     // {
