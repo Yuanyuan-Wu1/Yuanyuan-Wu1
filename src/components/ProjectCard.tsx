@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
-import { motion, MotionProps } from 'framer-motion';
+import { motion, MotionProps, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ProjectType } from '../types';
 import { blurImageURL } from '../utils/config';
 
-interface ProjectCardProps {
+interface ProjectCardProps extends MotionProps {
   name: string;
   url: string;
   repo: string;
@@ -14,6 +14,10 @@ interface ProjectCardProps {
   video?: string;        // 可选的本地视频
   videoUrl?: string;     // 可选的在线视频URL
   tags: string[];
+  variants?: Variants;
+  initial?: string;
+  whileInView?: string;
+  custom?: number;
 }
 
 const ProjectCard = ({
@@ -25,6 +29,10 @@ const ProjectCard = ({
   video,
   videoUrl,
   tags,
+  variants,
+  initial,
+  whileInView,
+  custom,
   ...rest
 }: ProjectCardProps) => {
   // To avoid hydration failed error
@@ -35,7 +43,14 @@ const ProjectCard = ({
   }, []);
 
   return domLoaded ? (
-    <motion.div {...rest} className="w-full max-w-[350px]">
+    <motion.div 
+      {...rest} 
+      variants={variants}
+      initial={initial}
+      whileInView={whileInView}
+      custom={custom}
+      className="w-full max-w-[350px]"
+    >
       <button
         onClick={(e) => {
           // Don't run this if the clicked target is an anchor element

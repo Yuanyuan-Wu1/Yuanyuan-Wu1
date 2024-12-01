@@ -201,6 +201,7 @@ export const projectsSection: ProjectsSectionType = {
       url: "https://pypi.org/project/t5_grp/", 
       repo: "https://github.com/CS6510-SEA-F24/t5-project.git",
       videoUrl: "https://www.youtube.com/watch?v=cVOmJRHzG6k",
+      img: "",
       year: 2024,
       tags: [
         "Python",
@@ -237,6 +238,7 @@ export const projectsSection: ProjectsSectionType = {
       url: "",
       repo: "",
       videoUrl: "https://www.youtube.com/watch?v=cVOmJRHzG6k",
+      img: "/Dash-Bot.png",
       year: 2022,
       tags: ["Java",
         "Gradle",
