@@ -62,18 +62,25 @@ const ProjectCard = ({
         <div className="media-container">
           {(video || videoUrl) ? (
             video ? (
-              <video controls className="w-full rounded-lg shadow-lg" poster={img}>
+              // 本地视频
+              <video 
+                controls 
+                className="w-full rounded-lg shadow-lg"
+                poster={img} // 使用图片作为视频封面
+              >
                 <source src={video} type="video/mp4" />
               </video>
             ) : (
+              // YouTube 或其他在线视频
               <iframe
                 className="w-full aspect-video rounded-lg shadow-lg"
-                src={videoUrl?.replace('watch?v=', 'embed/')}
+                src={videoUrl}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             )
           ) : (
+            // 如果没有视频，显示图片
             img && (
               <img 
                 src={img} 
@@ -83,44 +90,30 @@ const ProjectCard = ({
             )
           )}
         </div>
-        <div className="p-6 space-y-4">
-          <h4 className="flex justify-between group-hover:text-accent capitalize font-medium text-xl duration-200">
-            <span>{name}</span>
-            <span className="text-accent">{year}</span>
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 text-sm rounded-full 
-                         bg-accent/10 text-accent 
-                         hover:bg-accent/20 transition-colors
-                         dark:bg-accent/20 dark:hover:bg-accent/30"
+        <div className="p-4 py-3 space-y-1">
+          <div className="flex justify-between items-center">
+            <p className="text-xs capitalize font-mono">{tags.join(' | ')}</p>
+            <div className="flex items-center space-x-1.5">
+              <a
+                href={repo}
+                className="block hover:text-accent duration-200"
+                target="_blank"
               >
-                {tag}
-              </span>
-            ))}
+                <Icon icon="tabler:brand-github" width={20} height={20} />
+              </a>
+              <a
+                href={url}
+                className="block hover:text-accent duration-200"
+                target="_blank"
+              >
+                <Icon icon="ci:external-link" width={22} height={22} />
+              </a>
+            </div>
           </div>
-          <div className="flex items-center space-x-3 pt-2">
-            <a
-              href={repo}
-              className="flex items-center space-x-2 hover:text-accent duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon icon="tabler:brand-github" width={20} height={20} />
-              <span>Repository</span>
-            </a>
-            <a
-              href={url}
-              className="flex items-center space-x-2 hover:text-accent duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon icon="ci:external-link" width={22} height={22} />
-              <span>Live Demo</span>
-            </a>
-          </div>
+          <h4 className="flex justify-between group-hover:text-accent capitalize font-medium duration-200">
+            <span>{name}</span>
+            <span className="mr-1">{year}</span>
+          </h4>
         </div>
       </button>
     </motion.div>
