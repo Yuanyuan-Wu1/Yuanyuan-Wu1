@@ -92,7 +92,23 @@ const ProjectCard = ({
         </div>
         <div className="p-4 py-3 space-y-1">
           <div className="flex justify-between items-center">
-            <p className="text-xs capitalize font-mono">{tags.join(' | ')}</p>
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1.5 text-sm font-semibold
+                             bg-accent/10 text-accent border border-accent/20
+                             hover:bg-accent hover:text-white
+                             transform hover:scale-105
+                             transition-all duration-200 ease-in-out
+                             cursor-pointer shadow-sm
+                             dark:bg-accent/20 dark:hover:bg-accent
+                             rounded-lg"  // 改用更大的圆角
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
             <div className="flex items-center space-x-1.5">
               <a
                 href={repo}
