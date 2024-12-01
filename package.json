@@ -1,25 +1,30 @@
 {
-  "name": "portfolio3",
-  "version": "1.0.0",
-  "description": "> This portfolio application is a simple portfolio , with about, skills and some projects.",
-  "main": "server.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "check": "prettier --check .",
+    "lint": "prettier --write ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zahraaliaghazadeh/Portfolio3.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yuanyuan210/yoyo-portfolio/issues"
-  },
-  "homepage": "https://github.com/yuanyuan210/yoyo-portfolio#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "nodemailer": "^6.7.2"
+    "@lottiefiles/react-lottie-player": "^3.5.0",
+    "framer-motion": "^9.0.3",
+    "next": "latest",
+    "nodemon": "^2.0.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.31.3"
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.0.1",
+    "@types/node": "18.11.3",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "prettier": "2.8.3",
+    "tailwindcss": "^3.2.1",
+    "typescript": "4.8.4"
   }
 }
