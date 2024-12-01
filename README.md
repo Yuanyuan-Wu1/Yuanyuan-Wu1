@@ -42,3 +42,4 @@ Yuanyuan Wu (Yoyo)
 ## 📄 License
 © 2024 Yuanyuan Wu. All rights reserved.
 
+vercel deploy --prod
