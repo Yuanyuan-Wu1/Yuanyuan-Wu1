@@ -201,7 +201,7 @@ export const projectsSection: ProjectsSectionType = {
       img: "/cicd.png",
       url: "https://pypi.org/project/t5_grp/", 
       repo: "https://github.com/CS6510-SEA-F24/t5-project.git",
-      videoUrl: "https://www.youtube.com/watch?v=cVOmJRHzG6k",
+      videoUrl: "",
       year: 2024,
       tags: [
         "Python",
@@ -270,7 +270,7 @@ export const projectsSection: ProjectsSectionType = {
       name: "AI Connect Four Game",
       url: "",
       repo: "",
-      img: "/project-connect4.",
+      img: "/project-connect4.jpg",
       year: 2021,
       tags: ["Python", "Processing", "AI", "Game Development"],
     }
