@@ -47,7 +47,7 @@ const About = () => {
             </Link>
             , which showcases my abilities in full-stack development. Additionally, I'm working on a{' '}
             <Link
-              href="https://github.com/CS6510-SEA-F24/t5-project"
+              href="https://pypi.org/project/t5_grp/"
               target="_blank"
               className="text-accent"
             >
