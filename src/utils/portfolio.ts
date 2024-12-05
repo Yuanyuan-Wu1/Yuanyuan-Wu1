@@ -198,10 +198,10 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: "CI/CD Pipeline Visualization Tool",
+      img: "/cicd.png",
       url: "https://pypi.org/project/t5_grp/", 
       repo: "https://github.com/CS6510-SEA-F24/t5-project.git",
       videoUrl: "https://www.youtube.com/watch?v=cVOmJRHzG6k",
-      img: "",
       year: 2024,
       tags: [
         "Python",
@@ -219,18 +219,18 @@ export const projectsSection: ProjectsSectionType = {
       name: "My Travel Map",
       url: "",
       repo: "",
-      img: "",
+      img: "/project-map.jpg",
       year: 2023,
       tags: ["React", "Redux", "Node.js", "Express", "MongoDB", "Leaflet"],
     },
     {
       id: getId(),
       name: "Social Media Website",
-      url: "",
+      url: "https://aquamarine-croquembouche-7d27fa.netlify.app/tuiter/homescreen/",
       repo: "",
-      img: "",
+      img: "/tuiter.png",
       year: 2022,
-      tags: ["React.js", "Node.js", "MongoDB", "Bootstrap", "Jest"],
+      tags: ["React.js", "Node.js", "MongoDB", "Bootstrap", "Redux", "JWT"],
     },
     {
       id: getId(),
@@ -270,7 +270,7 @@ export const projectsSection: ProjectsSectionType = {
       name: "AI Connect Four Game",
       url: "",
       repo: "",
-      img: "",
+      img: "/project-connect4.",
       year: 2021,
       tags: ["Python", "Processing", "AI", "Game Development"],
     }
