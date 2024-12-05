@@ -95,7 +95,6 @@ export const aboutSection: AboutSectionType = {
   list: {
     title: 'Here are a few technologies I’ve been working with recently:',
     items: [
-      'Tools: Git, Gradle, Tomcat, Docker',
       'Programming Languages: Java, Python, JavaScript',
       'Web Technologies: React, Redux, Node.js',
       'Frameworks: Spring Boot, Django, Express',
