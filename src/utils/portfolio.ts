@@ -270,7 +270,7 @@ export const projectsSection: ProjectsSectionType = {
       name: "AI Connect Four Game",
       url: "",
       repo: "",
-      img: "/project-connect4.jpg",
+      img: "/project-cntfour.jpg",
       year: 2021,
       tags: ["Python", "Processing", "AI", "Game Development"],
     }
