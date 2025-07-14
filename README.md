@@ -7,7 +7,16 @@
 
 - 🔭 I’m currently working on [CI/CD pipelines Visualization Tool](https://pypi.org/project/t5_grp/)
 
-- 🌱 I’m currently learning **Docker\Kubernetes\REST**
+- 🌱 I'm currently learning **Docker\Kubernetes\REST**
+
+### Internship Experience
+**Software Engineering Intern | EZASPIE**  
+*AI-Full Stack Development · Remote · Jun 2025 - Aug 2025*
+
+- Developing AI communication core: LLM integration (OpenAI/Replicate) + Twilio Voice/SMS systems
+- Full-stack implementation: React frontend (Figma → production components) + Node.js backend (BI dashboard logic)
+- Engineering ownership: End-to-end debugging/testing (cross-device compatibility) + async collaboration
+- Key stack: OpenAI API · React · Node.js · Twilio · Figma · Jest/Puppeteer
 
 - 👯 I’m looking to collaborate on **Implementing a CI/CD system**
 

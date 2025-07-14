@@ -163,28 +163,18 @@ export const experienceSection: ExperienceSectionType = {
   title: "My experience and volunteering",
   experiences: [
     {
-      company: '',
+      company: 'EZASPIE',
       companyUrl: '',
-      role: 'Frontend Developer Intern',
-      started: 'June 2023',
-      upto: 'Aug 2023',
+      role: 'Software Engineering Intern',
+      started: 'June 2025',
+      upto: 'Aug 2025',
       tasks: [
-        ],
+        'Developing AI communication core: LLM integration (OpenAI/Replicate) + Twilio Voice/SMS systems',
+        'Full-stack implementation: React frontend (Figma → production components) + Node.js backend (BI dashboard logic)',
+        'Engineering ownership: End-to-end debugging/testing (cross-device compatibility) + async collaboration',
+        'Key stack: OpenAI API · React · Node.js · Twilio · Figma · Jest/Puppeteer',
+      ],
     },
-    
-    // {
-    //   company: '',
-    //   companyUrl: '',
-    //   role: '',
-    //   started: '',
-    //   upto: '',
-    //   tasks: [
-    //Description of volunteer work',
-    //'Impact and achievements',
-    //'Technologies or skills used',
-
-    //   ],
-    // },
   ],
 };
 
