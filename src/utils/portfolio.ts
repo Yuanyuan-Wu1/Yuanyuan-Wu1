@@ -77,8 +77,8 @@ export const navbarSection: NavbarSectionType = {
 export const heroSection: HeroSectionType = {
   subtitle: "Hello  👋, I'm ",
   title: 'Yuanyuan Wu.',
-  tagline: 'Full-Stack Developer',
-  description: 'Full-Stack Development with familiarity in Java and Python, passionate about building scalable and robust applications.',
+  tagline: 'AI + Full-Stack Developer',
+  description: 'AI-driven Full-Stack Development with familiarity in Java and Python, passionate about building scalable and robust applications.',
   specialText: "Master's Student @ Northeastern University",
 
   cta: {
@@ -160,11 +160,11 @@ export const skillsSection: SkillsSectionType = {
 // * Experience Section
 
 export const experienceSection: ExperienceSectionType = {
-  title: "My experience and volunteering",
+  title: "My experience",
   experiences: [
     {
       company: 'EZASPIE',
-      companyUrl: '',
+      companyUrl: 'https://app.ezaspie.ai/',
       role: 'Software Engineering Intern',
       started: 'June 2025',
       upto: 'Aug 2025',
