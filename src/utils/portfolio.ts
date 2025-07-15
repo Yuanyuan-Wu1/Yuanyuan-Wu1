@@ -115,8 +115,8 @@ export const skillsSection: SkillsSectionType = {
       title: 'full stack development',
       // animation lottie file: https://lottiefiles.com/
       lottie: {
-        light: '/lotties/frontend.json',
-        dark: '/lotties/frontend-dark.json',
+        light: '/lotties/Web Development.json',
+        dark: '/lotties/Web Development.json',
       },
       points: [
         'Building full-stack applications with Java and Python',
@@ -138,8 +138,8 @@ export const skillsSection: SkillsSectionType = {
       id: getId(),
       title: 'Backend Development',
       lottie: {
-        light: '/lotties/ethereum.json',
-        dark: '/lotties/ethereum-dark.json',
+        light: '/lotties/backend-development.json',
+        dark: '/lotties/backend-development.json',
       },
       points: [
         'Developing scalable backend services with Java and Python',
@@ -164,7 +164,7 @@ export const experienceSection: ExperienceSectionType = {
   experiences: [
     {
       company: 'EZASPIE',
-      companyUrl: 'https://app.ezaspie.ai/',
+      companyUrl: 'https://ezaspie.ai/',
       role: 'Software Engineering Intern',
       started: 'June 2025',
       upto: 'Aug 2025',
