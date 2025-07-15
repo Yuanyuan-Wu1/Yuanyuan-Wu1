@@ -59,7 +59,7 @@ const Tablist = ({ experiences }: Props) => {
           </h3>
           <p className="text-sm font-mono text-gray-600 dark:text-gray-400 capitalize flex items-center gap-2">
             <span className="w-2 h-2 bg-accent rounded-full"></span>
-            {started} - {upto}
+            <span>{String(started)} - {String(upto)}</span>
           </p>
         </div>
 
