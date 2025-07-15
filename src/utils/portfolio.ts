@@ -92,14 +92,48 @@ export const heroSection: HeroSectionType = {
 
 export const aboutSection: AboutSectionType = {
   title: 'about me',
+  description:
+    "I am a results-driven software engineer specializing in the intersection of *full-stack development* and *artificial intelligence*. My passion lies in *architecting robust, scalable systems* from the ground up and embedding *intelligent, data-driven features* at their core.\n\nWhether it's designing a *CI/CD orchestration engine on Kubernetes*, implementing *real-time AI-powered communication platforms*, or *optimizing database performance* for high-traffic applications, I thrive on solving complex engineering challenges. My goal is to leverage this *dual expertise in software architecture and AI* to build *next-generation intelligent applications* that are not only powerful but also intuitive and user-centric.",
   list: {
-    title: 'Here are a few technologies I’ve been working with recently:',
+    title: 'My technical toolkit includes:',
     items: [
-      'Programming Languages: Java, Python, JavaScript',
-      'Web Technologies: React, Redux, Node.js',
-      'Frameworks: Spring Boot, Django, Express',
-      'Database/Cloud: MySQL, MongoDB, Heroku',
-      'Tools: Git, Gradle, Tomcat,Docker'
+      {
+        category: 'Languages',
+        skills: ['Java', 'Python', 'JavaScript/TypeScript'],
+      },
+      {
+        category: 'Frontend',
+        skills: [
+          'React',
+          'Next.js',
+          'Redux',
+          'TailwindCSS',
+          'HTML/CSS',
+          'Figma',
+        ],
+      },
+      {
+        category: 'Backend',
+        skills: ['Node.js', 'Express.js', 'Spring Boot', 'FastAPI', 'RESTful APIs'],
+      },
+      {
+        category: 'AI/ML',
+        skills: ['OpenAI API', 'LLM Integration', 'Whisper AI', 'PyTorch'],
+      },
+      {
+        category: 'Databases & Data Streaming',
+        skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'WebSockets'],
+      },
+      {
+        category: 'DevOps & Cloud',
+        skills: [
+          'Docker',
+          'Kubernetes',
+          'CI/CD',
+          'GitHub Actions',
+          'AWS',
+        ],
+      },
     ],
   },
   img: '/yuanyuan-wu.jpg',
@@ -112,46 +146,48 @@ export const skillsSection: SkillsSectionType = {
   skills: [
     {
       id: getId(),
-      title: 'full stack development',
-      // animation lottie file: https://lottiefiles.com/
+      title: 'AI-Powered Full-Stack Development',
       lottie: {
         light: '/lotties/Web Development.json',
         dark: '/lotties/Web Development.json',
       },
       points: [
-        'Building full-stack applications with Java and Python',
-        'Creating RESTful APIs with Spring Boot and Express',
-        'Developing responsive web applications with React',
+        'Building end-to-end applications with integrated AI/LLM capabilities (e.g., OpenAI, Whisper).',
+        'Developing responsive and dynamic UIs with React, Next.js, and Redux for complex applications.',
+        'Architecting scalable backend services and RESTful APIs using Node.js/Express and Java/Spring Boot.',
+        'Implementing real-time communication features using WebSockets and message brokers like Redis.',
       ],
       softwareSkills: [
-        // iconify icons: https://icon-sets.iconify.design/
-        { name: 'Java', icon: 'logos:java' },
-        { name: 'Python', icon: 'logos:python' },
-        { name: 'JavaScript', icon: 'logos:javascript' },
         { name: 'React', icon: 'logos:react' },
-        { name: 'Node.js', icon: 'logos:nodejs' },
-        { name: 'MongoDB', icon: 'logos:mongodb' },
-        { name: 'MySQL', icon: 'logos:mysql' },
+        { name: 'Node.js', icon: 'logos:nodejs-icon' },
+        { name: 'Python', icon: 'logos:python' },
+        { name: 'Java', icon: 'logos:java' },
+        { name: 'Spring', icon: 'logos:spring-icon' },
+        { name: 'OpenAI', icon: 'logos:openai-icon' },
+        { name: 'MongoDB', icon: 'logos:mongodb-icon' },
       ],
     },
     {
       id: getId(),
-      title: 'Backend Development',
+      title: 'Cloud & DevOps Engineering',
       lottie: {
-        light: '/lotties/backend-development.json',
-        dark: '/lotties/backend-development.json',
+        light: '/lotties/cloudinfra.json',
+        dark: '/lotties/cloudinfra.json',
       },
       points: [
-        'Developing scalable backend services with Java and Python',
-        'Building and managing databases with MySQL and MongoDB',
-        'Implementing containerization with Docker and deployment automation',
+        'Designing and implementing complete CI/CD pipelines from scratch using tools like GitHub Actions.',
+        'Containerizing applications with Docker for consistent development and deployment environments.',
+        'Deploying and managing services on Kubernetes, including configuration of Ingress, PV, and HPA.',
+        'Building and scaling infrastructure on cloud platforms like AWS and Render.',
       ],
       softwareSkills: [
         { name: 'Docker', icon: 'logos:docker-icon' },
+        { name: 'Kubernetes', icon: 'logos:kubernetes' },
         { name: 'Git', icon: 'logos:git-icon' },
-        { name: 'Gradle', icon: 'logos:gradle' },
-        { name: 'Tomcat', icon: 'logos:tomcat' },
-        { name: 'Heroku', icon: 'logos:heroku-icon' },
+        { name: 'GitHub Actions', icon: 'logos:github-actions' },
+        { name: 'AWS', icon: 'logos:aws' },
+        { name: 'Nginx', icon: 'logos:nginx' },
+        { name: 'PostgreSQL', icon: 'logos:postgresql' },
       ],
     },
   ],
@@ -169,10 +205,10 @@ export const experienceSection: ExperienceSectionType = {
       started: 'June 2025',
       upto: 'Aug 2025',
       tasks: [
-        'Developing AI communication core: LLM integration (OpenAI/Replicate) + Twilio Voice/SMS systems',
-        'Full-stack implementation: React frontend (Figma → production components) + Node.js backend (BI dashboard logic)',
-        'Engineering ownership: End-to-end debugging/testing (cross-device compatibility) + async collaboration',
-        'Key stack: OpenAI API · React · Node.js · Twilio · Figma · Jest/Puppeteer',
+        'Contributed to the core AI communication engine by implementing backend features in Node.js/Express.js, integrating OpenAI GPT and Twilio APIs to enable intelligent, automated voice and SMS support systems.',
+        'Developed and implemented full-stack features for an AI-powered SaaS platform, translating Figma designs into responsive React/Next.js components and ensuring seamless integration with backend services.',
+        'Improved API performance and reliability by diagnosing and resolving backend routing conflicts, and contributed to data model integrity by proposing and assisting with Mongoose schema optimizations.',
+        'Actively participated in the end-to-end development lifecycle, from debugging and cross-browser testing to collaborating effectively in a fast-paced, async environment within a complex cloud stack (AWS, Docker).',
       ],
     },
   ],
@@ -271,8 +307,8 @@ export const contactSection: ContactSectionType = {
   title: 'get in touch',
   subtitle: "what's next",
   paragraphs: [
-    "I'm currently seeking full-stack development opportunities.",
-    'Feel free to reach out via email or phone (425-435-0107) to discuss potential positions or collaborations.',
+    "I'm actively seeking new opportunities in AI-powered full-stack development.",
+    "Whether you have a role in mind, a project to discuss, or just want to talk tech, my inbox is always open. Let's build something great together.",
   ],
   link: `mailto:${author.email}`,
 };

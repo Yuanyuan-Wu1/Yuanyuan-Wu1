@@ -29,9 +29,13 @@ export interface HeroSectionType extends Section {
 }
 
 export interface AboutSectionType extends Section {
+  description: string;
   list: {
     title: string;
-    items: string[];
+    items: {
+      category: string;
+      skills: string[];
+    }[];
   };
   img: string;
 }

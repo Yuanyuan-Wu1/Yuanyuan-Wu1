@@ -6,7 +6,7 @@ import { getId } from '../utils/helper';
 import { motion } from 'framer-motion';
 
 const About = () => {
-  const { title, img, list } = aboutSection;
+  const { title, img, list, description } = aboutSection;
   // To avoid hydration error
   const [domLoaded, setDomLoaded] = useState(false);
 
@@ -19,61 +19,60 @@ const About = () => {
       <h2 className="heading-secondary">{title}</h2>
       <main className="flex gap-16 items-center lg:items-start flex-col lg:flex-row">
         <div className="space-y-4 lg:w-3/5">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            className="space-y-4"
           >
-            Hi, I'm Yuanyuan Wu, a passionate full-stack developer currently pursuing my Master's degree 
-            in Computer Science at{' '}
-            <Link
-              href="https://www.northeastern.edu/"
-              target="_blank"
-              className="text-accent"
-            >
-              Northeastern University
-            </Link>
-            .
-          </motion.p>
-          <p>
-            I've recently completed an exciting project -{' '}
-            <Link
-              href="http://167.234.209.20:8080/voyage"
-              target="_blank"
-              className="text-accent"
-            >
-              Seattle Airbnb Web Application
-            </Link>
-            , which showcases my abilities in full-stack development. Additionally, I'm working on a{' '}
-            <Link
-              href="https://pypi.org/project/t5_grp/"
-              target="_blank"
-              className="text-accent"
-            >
-              CI/CD Pipeline Visualization Tool
-            </Link>
-            {' '}that demonstrates my expertise in Python and DevOps practices.
-          </p>
-          <p>
-            I'm actively seeking full-stack development opportunities where I can contribute my skills 
-            in Java, Python, and JavaScript ecosystems while continuing to grow as a developer.
-          </p>
+            {description.split('\n\n').map((paragraph, pIndex) => (
+              <p key={pIndex} className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                {paragraph.split(/(\*.*?\*)/g).map((part, partIndex) => {
+                  if (part.startsWith('*') && part.endsWith('*')) {
+                    return (
+                      <span key={partIndex} className="text-accent font-bold">
+                        {part.slice(1, -1)}
+                      </span>
+                    );
+                  }
+                  return <span key={partIndex}>{part}</span>;
+                })}
+              </p>
+            ))}
+          </motion.div>
 
           {list && (
-            <>
-              <p>{list.title}</p>
-              <ul className="text-sm gap-1 grid grid-cols-2 w-2/3">
+            <div className="mt-8">
+              <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-6">{list.title}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 {list.items.map((item) => (
-                  <ListItem 
-                    key={getId()} 
-                    className="hover:scale-105 hover:text-accent transition-all duration-300"
+                  <motion.div
+                    key={getId()}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    viewport={{ once: true }}
+                    className="group p-5 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-900/50 shadow-sm border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
                   >
-                    {item}
-                  </ListItem>
+                    <h4 className="font-semibold text-accent mb-3 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-accent rounded-full"></span>
+                      {item.category}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {item.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-sm bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full px-3 py-1.5 font-medium border border-gray-200 dark:border-gray-600 transition-all duration-200 hover:border-accent hover:text-accent"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
                 ))}
-              </ul>
-            </>
+              </div>
+            </div>
           )}
         </div>
         <HeroImage src={img} alt={author.name} />

@@ -36,9 +36,9 @@ const Skill = ({
           ))}
         </div>
 
-        <ul className="text-base space-y-2">
+        <ul className="text-base space-y-3">
           {points.map((point) => (
-            <ListItem key={getId()}>{point}</ListItem>
+            <ListItem key={getId()} variant="skills">{point}</ListItem>
           ))}
         </ul>
       </div>

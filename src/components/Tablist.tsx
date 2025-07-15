@@ -49,24 +49,23 @@ const Tablist = ({ experiences }: Props) => {
         ></div>
       </div>
 
-      <div key={getId()} className="space-y-5 p-1">
-        <div className="space-y-1">
-          <h3 className="text-lg font-medium text-dark-2 capitalize">
+      <div key={getId()} className="space-y-6 p-1">
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white capitalize">
             {role}{' '}
-            <Link href={companyUrl} target="_blank" className="text-accent">
+            <Link href={companyUrl} target="_blank" className="text-accent hover:text-accent/80 transition-colors">
               @{company}
             </Link>
           </h3>
-          <p className="text-xs font-mono capitalize">
-            <>
-              {started} - {upto}
-            </>
+          <p className="text-sm font-mono text-gray-600 dark:text-gray-400 capitalize flex items-center gap-2">
+            <span className="w-2 h-2 bg-accent rounded-full"></span>
+            {started} - {upto}
           </p>
         </div>
 
-        <ul className="space-y-2">
+        <ul className="space-y-4">
           {tasks.map((task) => (
-            <ListItem key={getId()}>{task}</ListItem>
+            <ListItem key={getId()} variant="experience" className="text-base">{task}</ListItem>
           ))}
         </ul>
       </div>

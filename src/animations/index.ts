@@ -117,17 +117,37 @@ export const getSectionAnimation = {
 export const projectVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 40,
+    y: 50,
+    scale: 0.95,
   },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
       type: 'spring',
-      stiffness: 150,
+      stiffness: 200,
+      damping: 25,
+      delay: 0.15 * i,
+      duration: 0.6,
+    },
+  }),
+};
+
+// * For category filters
+export const filterVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8,
+  },
+  show: (i: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 300,
       damping: 20,
-      delay: 0.2 * i,
-      // duration: 0.5,
+      delay: 0.1 * i,
     },
   }),
 };

@@ -10,9 +10,9 @@ interface ProjectCardProps extends MotionProps {
   url: string;
   repo: string;
   year: number;
-  img?: string;          // 可选的图片
-  video?: string;        // 可选的本地视频
-  videoUrl?: string;     // 可选的在线视频URL
+  img?: string;
+  video?: string;
+  videoUrl?: string;
   tags: string[];
   variants?: Variants;
   initial?: string;
@@ -35,103 +35,135 @@ const ProjectCard = ({
   custom,
   ...rest
 }: ProjectCardProps) => {
-  // To avoid hydration failed error
   const [domLoaded, setDomLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     setDomLoaded(true);
   }, []);
 
   return domLoaded ? (
-    <motion.div 
-      {...rest} 
+    <motion.div
+      {...rest}
       variants={variants}
       initial={initial}
       whileInView={whileInView}
       custom={custom}
-      className="w-full max-w-[350px]"
+      className="w-full max-w-[380px] h-full"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
-      <button
-        onClick={(e) => {
-          // Don't run this if the clicked target is an anchor element
-          if ((e.target as HTMLElement).closest('a')) return;
-          window.open(url);
-        }}
-        className="group bg-bg-secondary block w-full shadow-xl dark:shadow-2xl rounded-md overflow-hidden transition-all duration-200"
-      >
-        <div className="media-container">
+      <div className="group bg-white dark:bg-gray-900 rounded-xl shadow-lg dark:shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full flex flex-col">
+        
+        {/* Media Section */}
+        <div className="relative overflow-hidden bg-gray-100 dark:bg-gray-800">
           {(video || videoUrl) ? (
             video ? (
-              // 本地视频
-              <video 
-                controls 
-                className="w-full rounded-lg shadow-lg"
-                poster={img} // 使用图片作为视频封面
+              <video
+                controls
+                className="w-full h-48 object-cover"
+                poster={img}
               >
                 <source src={video} type="video/mp4" />
               </video>
             ) : (
-              // YouTube 或其他在线视频
-              <iframe
-                className="w-full aspect-video rounded-lg shadow-lg"
-                src={videoUrl}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              <div className="relative w-full h-48">
+                <iframe
+                  className="w-full h-full"
+                  src={videoUrl}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             )
           ) : (
-            // 如果没有视频，显示图片
             img && (
-              <img 
-                src={img} 
-                alt={name} 
-                className="w-full rounded-lg shadow-lg"
-              />
+              <div className="relative w-full h-48 overflow-hidden">
+                <img
+                  src={img}
+                  alt={name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
             )
           )}
-        </div>
-        <div className="p-4 py-3 space-y-1">
-          <div className="flex justify-between items-center">
-            <div className="flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1.5 text-sm font-semibold
-                             bg-accent/10 text-accent border border-accent/20
-                             hover:bg-accent hover:text-white
-                             transform hover:scale-105
-                             transition-all duration-200 ease-in-out
-                             cursor-pointer shadow-sm
-                             dark:bg-accent/20 dark:hover:bg-accent
-                             rounded-lg"  // 改用更大的圆角
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div className="flex items-center space-x-1.5">
-              <a
-                href={repo}
-                className="block hover:text-accent duration-200"
-                target="_blank"
-              >
-                <Icon icon="tabler:brand-github" width={20} height={20} />
-              </a>
-              <a
-                href={url}
-                className="block hover:text-accent duration-200"
-                target="_blank"
-              >
-                <Icon icon="ci:external-link" width={22} height={22} />
-              </a>
-            </div>
+          
+          {/* Overlay Year Badge */}
+          <div className="absolute top-3 right-3">
+            <span className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+              {year}
+            </span>
           </div>
-          <h4 className="flex justify-between group-hover:text-accent capitalize font-medium duration-200">
-            <span>{name}</span>
-            <span className="mr-1">{year}</span>
-          </h4>
         </div>
-      </button>
+
+        {/* Content Section */}
+        <div className="p-6 flex-1 flex flex-col">
+          {/* Title */}
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-accent transition-colors duration-200 capitalize leading-tight">
+            {name}
+          </h3>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 mb-4 flex-1">
+            {tags.slice(0, 4).map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-600 transition-all duration-200 hover:border-accent hover:text-accent hover:bg-accent/5"
+              >
+                {tag}
+              </span>
+            ))}
+            {tags.length > 4 && (
+              <span className="px-3 py-1 text-xs font-medium bg-accent/10 text-accent rounded-full">
+                +{tags.length - 4} more
+              </span>
+            )}
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center space-x-3">
+              {repo && (
+                <a
+                  href={repo}
+                  className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Icon icon="tabler:brand-github" width={18} height={18} />
+                  Code
+                </a>
+              )}
+              {url && (
+                <a
+                  href={url}
+                  className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Icon icon="ci:external-link" width={18} height={18} />
+                  Live
+                </a>
+              )}
+            </div>
+            
+            {/* View Project Button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                if (url) window.open(url, '_blank');
+              }}
+              className="px-4 py-2 bg-accent text-white text-sm font-medium rounded-lg hover:bg-accent/90 transition-all duration-200 hover:scale-105 disabled:opacity-50"
+              disabled={!url}
+            >
+              View Project
+            </button>
+          </div>
+        </div>
+      </div>
     </motion.div>
   ) : (
     <></>
